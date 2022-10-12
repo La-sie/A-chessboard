@@ -1,36 +1,58 @@
-  * {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-  }
-   main-box{
-            border: 25px solid rgb(67, 27, 27);
-            display: inline-block;
-            height: 640px;
-            width: 640px;
-            margin: 20px;
-            font-size: 60px;
-            left: 25%;
-            position: absolute;
-    }
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Times New Roman', "Times", "serif";
+    font-weight: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FFAC);
+}
+.calculator-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(15px, auto) repeat(5, 15vh);
+}
+.calculator-grid > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background: rgba( 255, 255, 255, .75);
+}
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
 
-  .white-box{
-    background-color: #fff;
-    text-align: center;
-    vertical-align: middle;
-    height: 80px;
-    width: 80px;
-    float: left;
-    color: black;
-    }  
-
- .black-box {
-    background-color: rgb(15, 13, 13);
-    text-align: center;
-    vertical-align: middle;
-    height: 80px;
-    width: 80px;
-    float: left;
+.data-delete {
+  color : red;
+}
+.span-two {
+    grid-column: span 2;
+    color : red;
+}
+.output{
+    grid-column: 1 / -1;
+    background: rgba( 0, 0, 0, .75);
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-end;
+    flex-direction: column;
+    padding: 15px;
+    word-wrap: break-word;
+    word-break: break-all; 
+    height: 100px;
+}
+.output .previous-operand {
+    color: rgba( 255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+.output .current-operand {
     color: white;
-    }
+    font-size: 2.5rem;
+}
+
     
